@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 100vh;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+header {
+    grid-column: 1 / 4;
+    grid-row: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+}
+
+h1{
+    flex: auto;
+}
+#img-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#input-busqueda {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ccc;
+}
+
+button:hover {
+    background-color: #007BFF;
+}
+
+nav {
+    grid-column: 2 /  4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+nav button{
+    width: 100%;
+    max-width: 200px; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: rgb(5, 5, 5);
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#lateral {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+#lateral ul li {
+    margin: 10px 0;
+}
+
+#lateral ul li:hover {
+    text-decoration: underline;
+}
+
+#lateral ul li img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#principal {
+    grid-column: 2 / 3;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#principal article {
+    margin: 15px;
+    padding: 10px;
+    border: 2px dashed black;
+}
+
+#anuncio {
+    grid-column: 3 / 4; 
+    background-color: #e2e2e2;
+}
+
+#anuncio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
