@@ -58,6 +58,7 @@ button:hover {
 }
 
 nav {
+    height: 100%;
     grid-column: 2 /  4;
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +67,8 @@ nav {
     padding: 10px;
 }
 nav button{
+    align-content: center;
+    height: 50px;
     width: 100%;
     max-width: 200px; 
     padding: 10px 20px;
@@ -77,6 +80,7 @@ nav button{
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: auto;
 }
 
 nav button:hover{
