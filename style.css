@@ -24,6 +24,10 @@ body {
     overflow: hidden;
 }
 
+.imagen{
+    cursor: pointer;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -40,12 +44,24 @@ header {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+    transition: transform 0.3s ease; 
+    cursor: pointer; 
+}
+
+.img-perfil.grande {
+    transform: scale(2); 
 }
 
 header h1 {
     color: white;
     margin: 0;
     font-size: 1.8em;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+}
+
+header.grande h1 {
+    margin-left: 20px; 
 }
 
 nav {
@@ -106,6 +122,12 @@ main p {
 
 h2{
     color: #0366d6;
+    cursor: pointer;
+    width: 20%;
+}
+
+h2.chico{
+    transform: scale3d(1, 2, 1);
 }
 
 table {
@@ -130,7 +152,7 @@ table td a {
     text-decoration: none;
 }
 
-/* formulario */
+/* Formulario */
 .form {
     background-color: white;
     max-width: 900px;
@@ -151,6 +173,52 @@ form {
     gap: 15px;
 }
 
+.sending {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.sending::after {
+    content: "Enviando...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 1;
+    text-align: center;
+}
+
+.sending button {
+    background-color: #999; 
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.sending::after {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
 label {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
@@ -159,7 +227,7 @@ label {
 
 input, textarea, select {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
@@ -220,6 +288,100 @@ button:hover {
     border-radius: 8px;
 }
 
+/* Modo oscuro */
+body.dark-theme .container{
+    background-color: #636262;
+}
+
+body.dark-theme{
+    background-color: #24292e;
+}
+
+body.dark-theme p{
+    color: #ffffff;
+}
+
+body.dark-theme h2{
+    color: #000000;
+}
+
+body.dark-theme form{
+    background-color: #636262;
+}
+
+body.dark-theme .form-container{
+    background-color: #636262;
+}
+
+body.dark-theme input{
+    background-color: #909090;
+    color: #0a0a0a;
+}
+
+body.dark-theme label{
+    color: #ffffff;
+}
+
+body.dark-theme select{
+    background-color: #909090;
+}
+
+body.dark-theme textarea{
+    background-color: #909090;
+}
+
+body.dark-theme button{
+    background:linear-gradient(130deg, #000000, rgb(142, 142, 142) );
+    color: white;
+}
+
+body.dark-theme .image-container{
+    background-color: #636262;
+}
+
+body.dark-theme td{
+    color: #ffffff;
+}
+
+body.dark-theme a{
+    color: #ffffff;
+}
+
+body.dark-theme th{
+    background-color: #636262;
+    color: #0a0a0a;
+}
+
+body.dark-theme div{
+    background-color: #636262;
+}
+
+body.dark-theme section{
+    background-color: #636262;
+}
+
+body.dark-theme input:focus{
+    border: 3px solid #000000;
+    outline: none;
+    box-shadow: 3px 0px 30px(rgba(163, 163, 163, 0.4));
+}
+
+body.dark-theme textarea:focus{
+    border: 3px solid #000000;
+    outline: none;
+    box-shadow: 3px 0px 30px(rgba(163, 163, 163, 0.4));
+}
+
+/* Footer */
+footer {
+    background-color: #24292e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .form {
         flex-direction: column;
@@ -237,14 +399,6 @@ button:hover {
         max-width: 100%;
         display: none;
     }
-}
-
-footer {
-    background-color: #24292e;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 0 0 12px 12px;
 }
 
 @media (max-width: 650px) {
@@ -273,6 +427,10 @@ footer {
         font-size: 1.5em;
     }
 
+    header.grande h1 {
+        margin-top: 20px; 
+    }
+
     nav ul {
         flex-direction: column;
         gap: 10px;
@@ -299,3 +457,4 @@ footer {
         font-size: 0.9em;
     }
 }
+
