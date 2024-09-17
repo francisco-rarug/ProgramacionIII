@@ -17,7 +17,7 @@ class Auto {
     }
 
     static mostrarAuto(auto) {
-        console.log(`Marca: ${auto.#_marca}, Color: ${auto.#_color}, Precio: ${auto.#_precio}, Fecha: ${auto.#_fecha}`)
+        console.log(`marca: ${auto.#_marca}, color: ${auto.#_color}, precio: ${auto.#_precio}, fecha: ${auto.#_fecha}`)
     }
 
     equals(auto) {

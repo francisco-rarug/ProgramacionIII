@@ -12,8 +12,8 @@ class Garage {
     }
 
     mostrarGarage() {
-        console.log(`razon social: ${this.#_razonSocial}, precio por Hora: ${this.#_precioPorHora}`)
-        console.log("Autos en el garaje:")
+        console.log(`razon social: ${this.#_razonSocial}, precio por hora: ${this.#_precioPorHora}`)
+        console.log("autos en el garaje:")
         this.#_autos.forEach(auto => Auto.mostrarAuto(auto))
     }
 
@@ -25,7 +25,7 @@ class Garage {
         if (!this.equals(auto)) {
             this.#_autos.push(auto)
         } else {
-            console.log("el auto ya está en el garaje.")
+            console.log("el auto ya esta en el garaje")
         }
     }
 
@@ -33,7 +33,7 @@ class Garage {
         if (this.equals(auto)) {
             this.#_autos = this.#_autos.filter(a => a !== auto)
         } else {
-            console.log("el auto no esta en el garaje.")
+            console.log("el auto no esta en el garaje")
         }
     }
 }
